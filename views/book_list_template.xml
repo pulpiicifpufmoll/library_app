@@ -1,0 +1,32 @@
+<odoo>
+    <template id="book_list_template" name="Book List">
+        <div id="wrap" class="container">
+            <h1>Books</h1>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Authors</th>
+                        <th>Publisher</th>
+                        <th>Date Published</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="books" t-as="book">
+                        <tr>
+                            <td><span t-field="book.name"/></td>
+                            <td>
+                                <t t-foreach="book.author_ids" t-as="author">
+                                    <span t-field="author.name" t-options='{"widget": "many2many_tags"}'/>
+                                    <br/>
+                                </t>
+                            </td>
+                            <td><span t-field="book.publisher_id.name"/></td>
+                            <td><span t-field="book.date_published"/></td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+        </div>
+    </template>
+</odoo>

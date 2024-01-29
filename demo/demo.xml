@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+<!--
+          <record id="test1" model="library_app.library_app">
+            <field name="name">test 1</field>
+            <field name="value">1</field>
+          </record>
+-->
+    </data>
+</odoo>
